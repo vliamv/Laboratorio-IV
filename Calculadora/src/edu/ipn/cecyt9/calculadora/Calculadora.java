@@ -53,8 +53,8 @@ public class Calculadora extends JFrame {
 	 */
 	public Calculadora() {
 		super();
-		setSize(250, 300);
-		setTitle("Calculadora Simple");
+		setSize(450, 300);
+		setTitle("Calculadora Chidori- Liam");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setResizable(false);
 
@@ -90,9 +90,15 @@ public class Calculadora extends JFrame {
 		nuevoBotonOperacion("-");
 		nuevoBotonOperacion("*");
 		nuevoBotonOperacion("/");
+                nuevoBotonOperacion("^2");
+                nuevoBotonOperacion("^3");
+                nuevoBotonOperacion("√");
+                nuevoBotonOperacion("ln");
+                nuevoBotonOperacion("log");
 		nuevoBotonOperacion("=");
 		nuevoBotonOperacion("CE");
 
+                
 		panel.add("East", panelOperaciones);
 
 		validate();
@@ -192,7 +198,19 @@ public class Calculadora extends JFrame {
 			resultado /= new Double(pantalla.getText());
 		} else if (operacion.equals("*")) {
 			resultado *= new Double(pantalla.getText());
-		}
+		} else if (operacion.equals("^2")) {
+                        resultado  = Math.pow(resultado,2) ;
+                }else if (operacion.equals("^3")) {
+                        resultado  = Math.pow(resultado,3) ;
+                }else if (operacion.equals("√")) {
+                        resultado  = Math.sqrt(resultado) ;
+                }else if (operacion.equals("ln")) {
+                        resultado  = Math.log1p(resultado) ;
+                }else if (operacion.equals("log")) {
+                        resultado  = Math.log(resultado) ;
+                }
+                 
+                
 
 		pantalla.setText("" + resultado);
 		operacion = "";
