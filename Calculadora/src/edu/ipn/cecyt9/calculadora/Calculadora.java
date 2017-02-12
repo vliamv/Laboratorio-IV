@@ -188,7 +188,8 @@ public class Calculadora extends JFrame {
 
 	/**
 	 * Calcula el resultado y lo muestra por pantalla
-	 */
+	 */ 
+        
 	private void calcularResultado() {
 		if (operacion.equals("+")) {
 			resultado += new Double(pantalla.getText());
